@@ -1,0 +1,2 @@
+../CMSIS/NN/Source/PoolingFunctions/arm_avgpool_s8.c:243:12:arm_avgpool_s8	144	static
+../CMSIS/NN/Source/PoolingFunctions/arm_avgpool_s8.c:369:9:arm_avgpool_s8_get_buffer_size	0	static

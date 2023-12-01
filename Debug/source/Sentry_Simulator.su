@@ -1,0 +1,10 @@
+../source/Sentry_Simulator.c:216:6:InputTask	8	static
+../source/Sentry_Simulator.c:232:6:MainTask	8	static
+../source/Sentry_Simulator.c:248:6:NetworkTask	8	static
+../source/Sentry_Simulator.c:264:6:OutputTask	8	static
+../source/Sentry_Simulator.c:196:6:PrintStartupBanner	24	static
+../source/Sentry_Simulator.c:102:5:main	24	static
+../source/Sentry_Simulator.c:288:6:vApplicationTickHook	0	static
+../source/Sentry_Simulator.c:326:6:vApplicationMallocFailedHook	8	static
+../source/Sentry_Simulator.c:344:6:vApplicationStackOverflowHook	8	static
+../source/Sentry_Simulator.c:362:6:vApplicationIdleHook	16	static
