@@ -24,7 +24,7 @@ After installing MCUXpresso IDE on my primary work PC, I built and installed the
 
 I soldered header pins into the Arduino headers on the board, and made a 4-wire cable to connect 3.3V, GND and serial TX/RX to the Sensaphone serial board PCB-0089 RevB. Building and installing NXP example projects 'evkmimxrt1020_hello_world', 'evkmimxrt1020_freertos_hello' and 'evkmimxrt1020_freertos_mutex' I verified at least the ability to read printouts from the board over a serial interface: got "Hello world" and other messages in a terminal.
 
-<img src="Sensaphone_Sentry_Simulator_20231201.JPG" alt="Sentry Simulator hooked up" />
+<img src="Sensaphone_Sentry_Simulator_20231201.jpg" alt="Sentry Simulator hooked up" />
 
 I struggled with creating a FreeRTOS project from scratch. The skeleton project created with FreeRTOS enabled and selected had no hooks for any RTOS tasks, queues, semaphores nor any other RTOS constructs. I tried copying/pasting from the FreeRTOS examples, but that would only result in weird build failures (failures were in FreeRTOS, not being able to find its own functions!). Finally got a FreeRTOS project by copying an existing FreeRTOS example project. 
 - In fact NXP documentation suggests that, to create a new project using some particular feature, to copy the relevant example project and edit it!
