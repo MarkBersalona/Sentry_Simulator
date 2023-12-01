@@ -45,6 +45,7 @@ I struggled with creating a FreeRTOS project from scratch. The skeleton project 
 
 ## Version history
 2023.12.01 v0.0.1
+
 First working project, derived from copying the NXP example project 'evkmimxrt1020_freertos_generic', slowly disabling code and rebuilding until a single FreeRTOS task remained while still able to build successfully. I renamed the single task as MainTask(). 
 
 This still left the following FreeRTOS hook functions
