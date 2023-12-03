@@ -15,7 +15,7 @@ The chosen project is a 400 Cellular/Sentry simulator
 - Instead of a cellular transceiver, network connection will be via Ethernet port
 - Ideally its debug inputs and outputs will be compatible with the Sensaphone 400 Cellular Diagnostic tool
 
-As of 2023.12.01 <u>I much prefer STM32CubeIDE and STM32CubeProgrammer</u> over the IDEs from NXP and Silicon Labs (don't think they offer an equivalent to STM32CubeProgrammer; I use the IDE built-in debugger to program the respective devices).
+As of 2023.12.01 <em>I much prefer STM32CubeIDE and STM32CubeProgrammer</em> over the IDEs from NXP and Silicon Labs (not sure if they offer an equivalent to STM32CubeProgrammer, with the ability to create both .bin and .hex files; I use the IDE built-in debugger to program the respective devices).
 
 ## Getting the board up and running
 
@@ -27,18 +27,19 @@ I soldered header pins into the Arduino headers on the board, and made a 4-wire 
 <img src="Sensaphone_Sentry_Simulator_20231201.jpg" alt="Sentry Simulator hooked up" />
 
 I struggled with creating a FreeRTOS project from scratch. The skeleton project created with FreeRTOS enabled and selected had no hooks for any RTOS tasks, queues, semaphores nor any other RTOS constructs. I tried copying/pasting from the FreeRTOS examples, but that would only result in weird build failures (failures were in FreeRTOS, not being able to find its own functions!). Finally got a FreeRTOS project by copying an existing FreeRTOS example project. 
-- In fact NXP documentation suggests that, to create a new project using some particular feature, to copy the relevant example project and edit it!
+- In fact NXP documentation suggests that, to create a new project using some particular feature, to copy the relevant example project and edit it! (To be fair, FreeRTOS makes the same suggestion.)
 
 ### Initial impressions
 - Like the Silicon Labs Simplicity Studio IDE, MCUXpresso IDE makes example projects and demos more accessible than in STM32CubeIDE.
 - Clock configuration appears comprehensive, though not graphical like STM32CubeIDE
-- Adding/modifying FreeRTOS items like tasks, queues and semaphores/mutexes is done by copying/pasting or otherwise manually typing into code; it requires more FreeRTOS expertise. In contrast, STM32CubeIDE offers graphical selectors and other GUI items; it requires less FreeRTOS expertise. (I haven't tried Azure RTOS, and NXP provides no examples.)
+- Adding/modifying FreeRTOS items like tasks, queues and semaphores/mutexes is done by copying/pasting or otherwise manually typing into code; it requires more FreeRTOS expertise. In contrast, STM32CubeIDE offers graphical selectors and other GUI items; it requires less FreeRTOS expertise. (I haven't tried Azure RTOS.)
 
 ### TODO things to add
 - watchdog timer/timeout
 - blink LED from Output task
 - recognize/debounce button press via Input task, i.e. simulate Reset-To-Defaults button
 - accept simple Diagnostic commands from the debug serial port
+- if a real-time clock is available, use it for at least elapsed times
 - read/write the QSPI flash chip, which also seems to be used for application storage; alternatively read/write the SD card for storage (but isn't that <em>file</em> storage?)
 - access the Ethernet port via Network task for nonsecure connections (echo servers; NTP servers; ping Google)
 - attempt secure connection with Sensaphone server
